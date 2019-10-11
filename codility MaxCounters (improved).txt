@@ -1,0 +1,40 @@
+def solution(N, A):
+    # write your code in Python 3.6
+    lis = [i for i,x in enumerate(A) if x == N + 1]
+    lis.insert(0,0)
+    countlis = []
+    leng = len(lis)
+    if lis == [0]:
+        sol1 = [0]*N
+        sol2 = A
+        for a in sol2:
+            sol1[a-1] = sol1[a-1] + 1
+        return sol1
+    for i,x in enumerate(lis):
+        if i == leng-1 :
+            break
+        lis_i = A[x:lis[i+1]]
+        if lis_i == [N+1]:
+            countlis.append(0)
+        else:
+            countlis_i = [lis_i.count(n) for n in range(0,N+1)]
+            countlis.append(max(countlis_i))
+    X = sum(countlis)
+    sol1 = [X] * N
+    sol2 = [A[j] for j in range(lis[leng-1]+1,len(A))]
+    for a in sol2:
+        sol1[a-1] = sol1[a-1] + 1
+    return sol1 
+
+Task Score
+77%
+Correctness
+100%
+Performance
+60%
+Programming language used
+Python
+Total time used
+28 minutes
+Effective time used
+28 minutes

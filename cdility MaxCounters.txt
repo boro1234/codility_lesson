@@ -1,0 +1,27 @@
+# you can write to stdout for debugging purposes, e.g.
+# print("this is a debug message")
+# write your code in Python 3.6
+
+def solution(N, A):
+    lis = [0] * N
+    for i in range(0,len(A)):
+        a = A[i]
+        if a <= N:
+            lis[a-1] = lis[a-1] + 1
+        if a == N + 1:
+            lis = [max(lis)]*N
+    return lis
+
+
+Task Score
+66%
+Correctness
+100%
+Performance
+40%
+Programming language used
+Python
+Total time used
+13 minutes
+Effective time used
+13 minutes

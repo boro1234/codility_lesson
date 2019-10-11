@@ -1,0 +1,17 @@
+# you can write to stdout for debugging purposes, e.g.
+# print("this is a debug message")
+# write your code in Python 3.6
+
+def solution(N):   
+    binN = bin(N)
+    lis = [i for i in binN]
+    binlis = [int(i) for i,x in enumerate(lis) if x == "1"]
+    binlis2 = binlis[1:]
+    binlis2.append(0)
+    sollis = []
+    for i in range(0,len(binlis)-1):
+        n = binlis2[i] - binlis[i] - 1
+        sollis.append(n)
+    if sollis == []:
+        return 0
+    return max(sollis)
