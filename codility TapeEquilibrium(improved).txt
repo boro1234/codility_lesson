@@ -1,0 +1,33 @@
+# you can write to stdout for debugging purposes, e.g.
+# print("this is a debug message")
+
+def solution(A):
+    # write your code in Python 3.6
+    N = len(A)
+    sum1 = A[0]
+    sum2 = sum(A[1:N])
+    sol = abs(sum1 - sum2)
+    for i,a in enumerate(A):
+        if i == N-1:
+            break
+        if i == 0:
+            continue
+        sum1 = sum1 + A[i]
+        sum2 = sum2 - A[i]
+        if abs(sum1 - sum2) < sol:
+            sol = abs(sum1 - sum2)
+    return sol
+
+
+Task Score
+100%
+Correctness
+100%
+Performance
+100%
+Programming language used
+Python
+Total time used
+11 minutes
+Effective time used
+11 minutes

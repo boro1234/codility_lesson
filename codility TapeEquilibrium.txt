@@ -1,0 +1,30 @@
+# you can write to stdout for debugging purposes, e.g.
+# print("this is a debug message")
+
+def solution(A):
+    # write your code in Python 3.6
+    sumA = sum(A)
+    N = len(A)
+    lis = []
+    for i,x in enumerate(A):
+        if i != 0:
+           A_i = A[i:N]
+           cutA_i = sum(A_i)
+           sumA_i = sumA - (cutA_i*2)
+           sumA_i = abs(sumA_i)
+           lis.append(sumA_i)
+    sol = min(lis)
+    return sol
+
+Task Score
+53%
+Correctness
+100%
+Performance
+0%
+Programming language used
+Python
+Total time used
+20 minutes
+Effective time used
+20 minutes
