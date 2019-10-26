@@ -1,0 +1,23 @@
+def solution(A):
+    # write your code in Python 3.6
+    lenA = len(A)
+    sol = [s for s in A if A.count(s) % 2 != 0]
+    sol = sol[0]
+    return sol
+
+
+Task Score
+66%
+Correctness
+100%
+Performance
+25%
+
+Programming language used
+Python
+Total time used
+11 minutes
+Effective time used
+11 minutes
+
+n^2

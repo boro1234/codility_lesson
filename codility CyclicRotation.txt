@@ -1,0 +1,33 @@
+def solution(A, K):
+    # write your code in Python 3.6
+    sol = []
+    if A == []:
+        return A
+    if len(A) > K:
+        sol.append(A[-K:])
+        sol.append(A[:-K])
+        sol = [s for lis in sol for s in lis]
+        return sol
+    a = K / len(A)
+    mod = K % len(A)
+    if float(a) == int(a):
+        return A
+    else:
+        sol.append(A[-mod:])
+        sol.append(A[:-mod])
+        sol = [s for lis in sol for s in lis]
+        return sol
+
+Task Score
+100%
+Correctness
+100%
+Performance
+Not assessed
+
+Programming language used
+Python
+Total time used
+16 minutes
+Effective time used
+16 minutes

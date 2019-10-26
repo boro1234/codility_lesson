@@ -1,0 +1,26 @@
+def solution(A):
+    # write your code in Python 3.6
+    setA = set()
+    for a in A:
+        if a not in setA:
+            setA.add(a)
+        else:
+            setA.remove(a)
+    solA = list(setA)
+    return solA[0]
+
+Task Score
+100%
+Correctness
+100%
+Performance
+100%
+
+Programming language used
+Python
+Total time used
+11 minutes
+Effective time used
+11 minutes
+
+n*logn
